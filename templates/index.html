@@ -38,9 +38,11 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center justify-content-lg-between">
-            
+
             <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="/" class="logo me-auto me-lg-0"><img src="https://th.bing.com/th/id/OIP.zigLSGTyehrxM2K6ac8b8AHaHa?pid=ImgDet&rs=1" alt="" class="img-fluid"></a>
+            <a href="/" class="logo me-auto me-lg-0"><img
+                    src="https://th.bing.com/th/id/OIP.zigLSGTyehrxM2K6ac8b8AHaHa?pid=ImgDet&rs=1" alt=""
+                    class="img-fluid"></a>
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
@@ -57,13 +59,23 @@
                             <li><a href="#">View Profile</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto" href="/signin">Sign In</a></li>
+
+                    {% if not request.user.is_authenticated %}
+                    <li><a class="nav-link scrollto" href="/signup">Signin</a></li>
+                    {% else %}
+                    <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+
+                    {% endif %}
+
+                    <!-- <li><a class="nav-link scrollto" href="/signup">Sign In</a></li> -->
+
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-            <a href="/achivements" class="get-started-btn scrollto">Gym Awards</a>
-
+            {% if request.user.is_authenticated %}
+            <a href="/" class="get-started-btn scrollto">Welcome</a>
+            {% endif %}
         </div>
     </header><!-- End Header -->
 
@@ -82,31 +94,31 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="icon-box">
                         <i class="ri-store-line"></i>
-                        <h3><a href="">Lorem Ipsum</a></h3>
+                        <h3><a href="">Bicep | Tricep </a></h3>
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-4">
                     <div class="icon-box">
                         <i class="ri-bar-chart-box-line"></i>
-                        <h3><a href="">Dolor Sitema</a></h3>
+                        <h3><a href="">Back</a></h3>
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-4">
                     <div class="icon-box">
                         <i class="ri-calendar-todo-line"></i>
-                        <h3><a href="">Sedare Perspiciatis</a></h3>
+                        <h3><a href="">Shoulders</a></h3>
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-4">
                     <div class="icon-box">
                         <i class="ri-paint-brush-line"></i>
-                        <h3><a href="">Magni Dolores</a></h3>
+                        <h3><a href="">Chest</a></h3>
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-4">
                     <div class="icon-box">
                         <i class="ri-database-2-line"></i>
-                        <h3><a href="">Nemos Enimade</a></h3>
+                        <h3><a href="">Legs</a></h3>
                     </div>
                 </div>
             </div>
@@ -283,7 +295,7 @@
 
             </div>
         </section><!-- End Services Section -->
-eck our Po
+        eck our Po
         <!-- ======= Cta Section ======= -->
         <section id="cta" class="cta">
             <div class="container" data-aos="zoom-in">
@@ -299,7 +311,7 @@ eck our Po
             </div>
         </section><!-- End Cta Section -->
 
-        
+
 
         <!-- ======= Counts Section ======= -->
         <section id="counts" class="counts">
