@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{%block title %}
+Profile
+{% endblock title %}
+
+{% block head %}
+<div class="container-fluid ">
+
+    <div class="row">
+
+        <div class="col-md-6"> 
+            {%for post in posts%}
+            <h2 class="my-2 fw-bold fs-2">Entrollment Details</h2>
+            <ul class="list-group">
+                  <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5 text-dark ">Name : {{post.FullName}}</p>
+                  </li>
+                   <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5  text-dark">Email: {{post.Email}}</p>
+                  </li>
+                   <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5  text-dark">Gender : {{post.Gender}}</p>
+                  </li>
+                  <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5  text-dark">PhoneNumber : {{post.PhoneNumber}}</p>
+                  </li>
+                  <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5  text-dark">DOB : {{post.DOB}}</p>
+                  </li>
+                  <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5  text-dark">Membership plan : {{post.SelectMembershipplan}}</p>
+                  </li>
+                  <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5  text-dark">Trainer : {{post.SelectTrainer}}</p>
+                  </li>
+                  <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5  text-dark">Address : {{post.Address}}</p>
+                  </li>
+                  <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5  text-dark">Payment Status : {{post.paymentStatus}}</p>
+                  </li> 
+                  <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5  text-dark">Amount Paid : {{post.price}}</p>
+                  </li>  
+                  <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5  text-dark">Upcoming Due Date : {{post.DueDate}}</p>
+                  </li> 
+                  <li class="list-group-item list-group-item-dark my-1 p-1 ">
+                      <p class="mb-1 fs-5  text-dark">Joining date : {{post.timeStamp}}</p>
+                  </li> 
+  
+              </ul>{%endfor%}
+        </div>
+        <div class="col-md-6 p-5">
+            <h2 class="my-2 fw-bold fs-2">Attendance Data</h2>
+              <table class="table bg-warning">
+                <thead class="thead-warning">
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">Logout</th>
+                    <th scope="col">Workout</th>
+                    <th scope="col">Trained By</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for attend in attendance %}
+                  <tr>
+                    <td>{{attend.Selectdate}}</td>
+                    <td>{{attend.Login}}</td>
+                    <td>{{attend.Logout}}</td>
+                    <td>{{attend.SelectWorkout}}</td>
+                    <td>{{attend.TrainedBy}}</td>   
+                </tr>
+                {% endfor %}
+                
+                </tbody>
+              </table>
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+{% endblock head %}

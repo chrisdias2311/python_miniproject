@@ -15,14 +15,14 @@ class Contact(models.Model):
 
 
 class Enroll(models.Model):
-    Fullname = models.CharField(max_length=25)
+    FullName = models.CharField(max_length=25)
     Email = models.EmailField()
     Gender = models.CharField(max_length=12)
     PhoneNumber = models.CharField(max_length=12)
     DOB = models.CharField(max_length=50)
     SelectMembershipplan = models.CharField(max_length=200)
     SelectTrainer = models.CharField(max_length=55)
-    Referenec = models.CharField(max_length=55)
+
     Address = models.TextField()
     paymentStatus = models.CharField(max_length=55, blank=True, null=True)
     price = models.IntegerField(max_length=55, blank=True, null=True)
@@ -30,7 +30,7 @@ class Enroll(models.Model):
     timeStamp = models.DateTimeField(auto_now_add=True, blank=True)
 
     def __str__(self):
-        return self.Fullname
+        return self.FullName
 
 
 class Trainer(models.Model):
@@ -48,6 +48,27 @@ class Trainer(models.Model):
 class MembershipPlan(models.Model):
     plan = models.CharField(max_length=185)
     price = models.IntegerField(max_length=55)
+
+    def __int__(self):
+        return self.id
+
+
+class Gallery(models.Model):
+    title = models.CharField(max_length=100)
+    img = models.ImageField(upload_to='gallery')
+    timeStamp = models.DateTimeField(auto_now_add=True, blank=True)
+
+    def __int__(self):
+        return self.id
+
+
+class Attendance(models.Model):
+    Selectdate = models.DateTimeField(auto_now_add=True)
+    phonenumber = models.CharField(max_length=15)
+    Login = models.CharField(max_length=200)
+    Logout = models.CharField(max_length=200)
+    SelectWorkout = models.CharField(max_length=200)
+    TrainedBy = models.CharField(max_length=200)
 
     def __int__(self):
         return self.id

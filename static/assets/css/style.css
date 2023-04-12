@@ -36,6 +36,8 @@ h6 {
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
+
+
 .back-to-top {
   position: fixed;
   visibility: hidden;
@@ -504,6 +506,10 @@ h6 {
   }
 }
 
+.icon-box img {
+  color: white;
+}
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -649,6 +655,13 @@ section {
   min-height: 400px;
 }
 
+section .trainer-item {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
@@ -709,8 +722,8 @@ section {
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
-.cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/cta-bg.jpg") fixed center center;
+.cta1 {
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url(../img/cta-bg.jpg) fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
@@ -1020,7 +1033,7 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
   padding: 80px 0;
-  background: url("../img/testimonials-bg.jpg") no-repeat;
+  background: url("static/assets/img/cycle.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
